@@ -3,12 +3,33 @@ from django.db import models
 # Our tables
 
 class Tasks(models.Model):
+    INBOX="in"
+    TODAY="td" 
+    NEXT="nx"
+    TOMORROW="tm"
+    SCHEDULED="sc"
+    SOMEDAY="sd"
+    WAITING="wf"
+    
+    FOLDERS=[
+        (INBOX, "inbox"),
+        (TODAY="today"),
+        (NEXT="next"),
+        (TOMORROW="tomorrow"),
+        (SCHEDULED="scheduled")
+        (SOMEDAY="someday"),
+        (WAITING="waiting for")
+    ]
     title = models.CharField(max_length=255)
     notes = models.TextField(max_length=2049, blank=True)
     start_time = models.DateTimeField(auto_now_add=true)
     deadline = models.DateTimeField(blank=True)
     complet = models.BooleanField(default=False)
     trashed = models.BooleanField(default=False)
+    folder = models.CharField(
+            choices=FOLDERS, 
+            default=INBOX
+    )
 
 class Subtasks(models.Model):
     title = models.CharField(max_length=255)
