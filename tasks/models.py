@@ -5,11 +5,16 @@ from .consts import FOLDERS, PRIORITY
 
 class Tag(models.Model):
     title = models.CharField(max_length=255, blank=False)
+    def __str__(self):
+        return self.title
 
 
 class Context(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
+    
+    def __str__(self):
+        return self.title
 
 
 class Goal(models.Model):
@@ -17,12 +22,18 @@ class Goal(models.Model):
     title = models.CharField(max_length=255, blank=False)
     note = models.TextField(max_length=2049, blank=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Group(models.Model):
 
     """Goups of contacts"""
 
     groupname = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.groupname
 
 
 class Contact(models.Model):
@@ -43,6 +54,9 @@ class Contact(models.Model):
     group = models.ForeignKey(
         Group, on_delete=models.SET_NULL, blank=True, null=True)
     """Group"""
+    
+    def __str__(self):
+        return self.email
 
 
 class Repeat(models.Model):
@@ -139,6 +153,9 @@ class Project(models.Model):
     compleat = models.BooleanField(default=False)
     trashed = models.BooleanField(default=False)
     archived = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.title
 
 
 class Task(models.Model):
@@ -168,6 +185,9 @@ class Task(models.Model):
         Repeat, on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(
         Tag, blank=True)
+    
+    def __str__(self):
+        return self.title
 
 
 class Reminder(models.Model):
@@ -193,16 +213,21 @@ class Reminder(models.Model):
 
     ondate = models.DateTimeField(blank=True)
     """ only for unit = 'ondate' """
-
+    
 
 class Subtask(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
     task = models.ForeignKey(Task, on_delete=models.CASCADE, blank=False)
+    
+    def __str__(self):
+        return self.title
 
 
 class Comment(models.Model):
 
     comment = models.TextField(max_length=2049, blank=False)
     task = models.ForeignKey(Task, on_delete=models.CASCADE, blank=False)
-
+    
+    def __str__(self):
+        return self.comment
