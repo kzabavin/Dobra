@@ -41,7 +41,7 @@ class Contact(models.Model):
     email = models.EmailField()
     nickname = models.CharField(max_length=255, blank=True)
 
-    birhday = models.DateField(blank=True)
+    birhday = models.DateField(blank=True, null=True)
     description = models.TextField(max_length=2049, blank=True)
 
     phone = models.CharField(
