@@ -167,7 +167,7 @@ class Task(models.Model):
     repeate = models.ForeignKey(
         Repeat, on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(
-        Tag, blank=True, null=True)
+        Tag, blank=True)
 
 
 class Reminder(models.Model):
