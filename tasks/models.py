@@ -5,6 +5,7 @@ from .consts import FOLDERS, PRIORITY
 
 class Tag(models.Model):
     title = models.CharField(max_length=255, blank=False)
+
     def __str__(self):
         return self.title
 
@@ -12,13 +13,13 @@ class Tag(models.Model):
 class Context(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
-    
+
     def __str__(self):
         return self.title
 
 
 class Goal(models.Model):
-    
+
     title = models.CharField(max_length=255, blank=False)
     note = models.TextField(max_length=2049, blank=True)
 
@@ -54,7 +55,7 @@ class Contact(models.Model):
     group = models.ForeignKey(
         Group, on_delete=models.SET_NULL, blank=True, null=True)
     """Group"""
-    
+
     def __str__(self):
         return self.email
 
@@ -136,8 +137,8 @@ class Project(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
     note = models.TextField(max_length=2049, blank=True)
-    
-    start_time = models.DateTimeField(auto_now_add=True)
+
+    start_time = models.DateTimeField(blank=True, null=True)
     """ today 
         next if blank
         tomorrow 
@@ -149,11 +150,11 @@ class Project(models.Model):
     goal = models.ForeignKey(
         Goal, on_delete=models.SET_NULL, blank=True, null=True)
 
-    deadline = models.DateTimeField(blank=True)
+    deadline = models.DateTimeField(blank=True, null=True)
     compleat = models.BooleanField(default=False)
     trashed = models.BooleanField(default=False)
     archived = models.BooleanField(default=False)
-    
+
     def __str__(self):
         return self.title
 
@@ -162,30 +163,32 @@ class Task(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
     note = models.TextField(max_length=2049, blank=True)
-    start_time = models.DateTimeField(auto_now_add=True)
-    deadline = models.DateTimeField(blank=True)
-    compleat = models.BooleanField(default=False)
-    trashed = models.BooleanField(default=False)
 
     folder = models.CharField(
         choices=FOLDERS.choices, default=FOLDERS.INBOX, blank=False,
         max_length=2)
+    start_time = models.DateTimeField(blank=True, null=True)
+    deadline = models.DateTimeField(blank=True, null=True)
+
     priority = models.IntegerField(
         choices=PRIORITY.choices, default=PRIORITY.MEDIUM, blank=False)
 
+    project = models.ForeignKey(
+        Project, on_delete=models.SET_NULL, blank=True, null=True)
     context = models.ForeignKey(
         Context, on_delete=models.SET_NULL, blank=True, null=True)
+    tags = models.ManyToManyField(
+        Tag, blank=True)
     assign = models.ForeignKey(
         Contact, on_delete=models.SET_NULL, blank=True, null=True)
     goal = models.ForeignKey(
         Goal, on_delete=models.SET_NULL, blank=True, null=True)
-    project = models.ForeignKey(
-        Project, on_delete=models.SET_NULL, blank=True, null=True)
     repeate = models.ForeignKey(
         Repeat, on_delete=models.SET_NULL, blank=True, null=True)
-    tags = models.ManyToManyField(
-        Tag, blank=True)
-    
+
+    compleat = models.BooleanField(default=False)
+    trashed = models.BooleanField(default=False)
+
     def __str__(self):
         return self.title
 
@@ -200,7 +203,8 @@ class Reminder(models.Model):
         default=1
     )
 
-    reminder_value = models.DecimalField(blank=True, max_digits=4, decimal_places=0)
+    reminder_value = models.DecimalField(
+        blank=True, max_digits=4, decimal_places=0)
     """ not for unit = 'ondate' """
 
     unit = models.CharField(
@@ -213,13 +217,13 @@ class Reminder(models.Model):
 
     ondate = models.DateTimeField(blank=True)
     """ only for unit = 'ondate' """
-    
+
 
 class Subtask(models.Model):
 
     title = models.CharField(max_length=255, blank=False)
     task = models.ForeignKey(Task, on_delete=models.CASCADE, blank=False)
-    
+
     def __str__(self):
         return self.title
 
@@ -228,6 +232,6 @@ class Comment(models.Model):
 
     comment = models.TextField(max_length=2049, blank=False)
     task = models.ForeignKey(Task, on_delete=models.CASCADE, blank=False)
-    
+
     def __str__(self):
         return self.comment
