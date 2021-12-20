@@ -163,7 +163,7 @@ class Task(models.Model):
     goal = models.ForeignKey(
         Goal, on_delete=models.SET_NULL, blank=True, null=True)
     project = models.ForeignKey(
-        Project, on_delete=models.CASCADE, blank=True)
+        Project, on_delete=models.SET_NULL, blank=True, null=True)
     repeate = models.ForeignKey(
         Repeat, on_delete=models.SET_NULL, blank=True, null=True)
     tags = models.ManyToManyField(
