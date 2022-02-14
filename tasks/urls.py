@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import index
+from .views import tasklist, taskform
 
 urlpatterns = [
-    path('', index),
+    path('', tasklist),
+    path('tasklist/', tasklist, name='tasklist'),
+    path('taskform/', taskform, name='taskform'),
 ]
     

@@ -27,18 +27,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'tasks.apps.TasksConfig',
-    'account',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Dobra.urls'
+
+
+LOGIN_REDIRECT_URL =  '/'
+#LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+
 
 TEMPLATES = [
     {

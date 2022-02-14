@@ -5,7 +5,7 @@ from .models import Task, Project, Goal, Tag, Context, Contact
 # Register your models here.
 
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('folder', 'start_time', 'title')
+    list_display = ('title', 'folder', 'start_time')
     list_filter = ('folder', 'goal', 'context', 'tags')
     search_fields = ('title', 'note')
 

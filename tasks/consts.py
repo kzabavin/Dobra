@@ -11,6 +11,14 @@ class FOLDERS(models.TextChoices):
     SOMEDAY = 'sd', _('someday')
     WAITING = 'wf', _('waiting for')
 
+    def blank_date(self, folder) -> bool:
+        date_must_be_blank = folder in [
+            self.INBOX, self.NEXT, self.SOMEDAY, self.WAITING
+            ]
+
+        return date_must_be_blank
+    
+
 
 class PRIORITY(models.IntegerChoices):
 

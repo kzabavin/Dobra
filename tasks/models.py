@@ -1,7 +1,8 @@
+from tabnanny import verbose
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from .consts import FOLDERS, PRIORITY
-
+from datetime import date, datetime, timedelta
 
 class Tag(models.Model):
     title = models.CharField(max_length=255, blank=False)
@@ -118,8 +119,8 @@ class Repeat(models.Model):
     )
 
     monthly_o = models.IntegerField(
-        choices=[(1, 'first'), (2, 'second'), (3, 'third'),
-                 (4, 'fourth'), (-1, 'last')],
+        choices=[(1, _('first')), (2, _('second')), (3, _('third')),
+                 (4, _('fourth')), (-1, _('last'))],
         default=1
     )
 
@@ -165,9 +166,17 @@ class Task(models.Model):
     note = models.TextField(max_length=2049, blank=True)
 
     folder = models.CharField(
-        choices=FOLDERS.choices, default=FOLDERS.INBOX, blank=False,
+        choices=FOLDERS.choices, default=FOLDERS.INBOX, 
+        blank=True, null=True, 
         max_length=2)
-    start_time = models.DateTimeField(blank=True, null=True)
+        
+    """ if start_time is set then folder is null """
+        
+    start_time = models.DateTimeField(
+        blank=True, null=True)
+        
+    """ if folder is set then start_time is null """
+
     deadline = models.DateTimeField(blank=True, null=True)
 
     priority = models.IntegerField(
@@ -189,8 +198,39 @@ class Task(models.Model):
     compleat = models.BooleanField(default=False)
     trashed = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = _("Task")
+        verbose_name_plural = _("Tasks")
+
     def __str__(self):
         return self.title
+    
+    def get_folder(self) -> FOLDERS:
+        
+        if self.start_time is None:
+            return self.folder
+
+        start_date = self.start_time.date()
+        
+        if start_date <= date.today() :
+            return FOLDERS.TODAY
+
+        elif start_date == date.today() + timedelta(days=1):
+            return FOLDERS.TOMORROW
+
+        else:
+            return FOLDERS.SCHEDULED
+
+    def set_folder_start_time(self, folder=None, start_time=None):
+        assert not folder is None or not start_time is None
+        if folder in [
+            FOLDERS.INBOX, FOLDERS.NEXT, FOLDERS.SOMEDAY, FOLDERS.WAITING
+            ]:
+            self.folder = folder
+            self.start_time = None
+        else:
+            self.folder = None
+            self.start_time = start_time
 
 
 class Reminder(models.Model):
@@ -199,7 +239,7 @@ class Reminder(models.Model):
         Task, on_delete=models.CASCADE, blank=False, null=False)
 
     reminder_type = models.IntegerField(
-        choices=[(1, 'Popup'), (2, 'E-mail')],
+        choices=[(1, _('Popup')), (2, _('E-mail'))],
         default=1
     )
 
@@ -208,8 +248,8 @@ class Reminder(models.Model):
     """ not for unit = 'ondate' """
 
     unit = models.CharField(
-        choices=[('minutes', 'minutes'), ('hours', 'hours'), ('days', 'days'),
-                 ('ondate', 'on date')
+        choices=[('minutes', _('minutes')), ('hours', _('hours')), ('days', _('days')),
+                 ('ondate', _('on date'))
                  ],
         default='minutes',
         max_length=10
