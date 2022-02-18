@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import tasklist, taskform
+from .views import tasklist, taskform, TaskCreateView, TaskDetailView
 
 urlpatterns = [
     path('', tasklist),
     path('tasklist/', tasklist, name='tasklist'),
     path('taskform/', taskform, name='taskform'),
+    path('new/', TaskCreateView.as_view(), name='task_new'),
+    path('task_detail/<int:pk>/', TaskDetailView.as_view(), name='task_detail'),
 ]
     

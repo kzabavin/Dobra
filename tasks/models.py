@@ -1,5 +1,6 @@
 from tabnanny import verbose
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from .consts import FOLDERS, PRIORITY
 from datetime import date, datetime, timedelta
@@ -231,6 +232,9 @@ class Task(models.Model):
         else:
             self.folder = None
             self.start_time = start_time
+
+    def get_absolute_url(self):
+        return reverse('task_detail', args=[str(self.id)])
 
 
 class Reminder(models.Model):

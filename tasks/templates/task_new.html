@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}Task{% endblock %}
+
+{% block main %}
+    <h1>New task</h1>
+    <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+    </form>
+{% comment "" %}
+<div  class="container">
+    <div  class="row justify-content-left">
+      <div  class="col-4">
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="CompleateCheck">
+                <label class="form-check-label" for="CompleateCheck">Compleate</label>
+            </div>
+            
+            <div class="mb-3">
+                <label for="InputTitle" class="form-label">Title</label>
+                <input type="title" class="form-control" id="InputTitle">
+              </div>
+
+              <div class="mb-3">
+                <label for="NoteTextarea" class="form-label">Note</label>
+                <textarea class="form-control" id="NoteTextarea" rows="3"></textarea>
+              </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Save</button>
+        </form>
+      </div>
+    </div>
+</div>
+{% endcomment %}
+{% endblock %}
