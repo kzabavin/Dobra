@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'goals.apps.GoalsConfig',
+    'contexts.apps.ContextsConfig',
+    'tags.apps.TagsConfig',
+    'projects.apps.ProjectsConfig',
     'tasks.apps.TasksConfig',
 ]
 

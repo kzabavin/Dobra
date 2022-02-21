@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}View{% endblock %}
+
+{% block main %}
+
+  <div class="task-entry">
+
+    <h2><input class="form-check-input" type="checkbox" value="" {% if object.compleat %} checked {% endif %}>
+    {{ object.title }}</h2>
+    <p>{{ object.note }}</p>
+  </div>
+
+  <p><a href='{% url 'edit' object.pk %}'>Edit </a></p>
+  <p><a href='{% url 'delete' object.pk %}'>Delete </a></p>
+
+{% endblock %}

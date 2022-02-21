@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView, UpdateView, DeleteView
 
-from .models import Task as CRUDModel
+from .models import Context as CRUDModel
 
 
 def modellist(request):
@@ -21,11 +21,7 @@ class ModelCreateView(CreateView):
         'compleat', 
         'title', 
         'note', 
-        'folder', 
-        'start_time', 
-        'deadline',
-        'priority',
-        'project'
+        'folder'
     ]
 
 
@@ -41,11 +37,7 @@ class ModelUpdateView(UpdateView):
         'compleat', 
         'title', 
         'note', 
-        'folder', 
-        'start_time', 
-        'deadline',
-        'priority',
-        'project'
+        'folder'
     ]
 
 

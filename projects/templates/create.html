@@ -1,12 +1,12 @@
 {% extends "index.html" %}
 
-{% block title %}Task{% endblock %}
+{% block title %}New{% endblock %}
 
 {% block main %}
-  <div class="task-entry">
-    <h2>{{ object.title }}</h2>
-    <p>{{ object.note }}</p>
-  </div>
+    <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Save" />
+    </form>
 {% comment "" %}
 <div  class="container">
     <div  class="row justify-content-left">

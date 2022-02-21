@@ -1,9 +1,8 @@
 {% extends "index.html" %}
 
-{% block title %}Task{% endblock %}
+{% block title %}New{% endblock %}
 
 {% block main %}
-    <h1>New task</h1>
     <form action="" method="post">{% csrf_token %}
       {{ form.as_p }}
       <input type="submit" value="Save" />
