@@ -19,6 +19,10 @@ from tasks.views import modellist
 
 urlpatterns = [
 
+    path('tags/', include('tags.urls')),
+    path('contexts/', include('contexts.urls')),
+    path('goals/', include('goals.urls')),
+    path('projects/', include('projects.urls')),
     path('tasks/', include('tasks.urls')),
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),

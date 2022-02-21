@@ -18,10 +18,8 @@ class ModelCreateView(CreateView):
     model = CRUDModel
     template_name = 'create.html'
     fields = [
-        'compleat', 
         'title', 
         'note', 
-        'folder'
     ]
 
 

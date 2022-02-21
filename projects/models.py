@@ -35,3 +35,5 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('detail', args=[str(self.id)])
