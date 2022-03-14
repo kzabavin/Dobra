@@ -11,34 +11,24 @@ from .models import Context as CRUDModel
 
 
 def modellist(request):
-    return render(request, 'list.html', {'objects': CRUDModel.objects.all() })
+    return render(request, 'contexts/list.html', {'objects': CRUDModel.objects.all() , 'name': CRUDModel.__name__})
     
 
 class ModelCreateView(CreateView):
     model = CRUDModel
     template_name = 'create.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder'
-    ]
+    fields = ['title']
 
 
 class ModelDetailView(DetailView):
     model = CRUDModel
-    template_name = 'read.html'
+    template_name = 'contexts/read.html'
 
 
 class ModelUpdateView(UpdateView):
     model = CRUDModel
-    template_name = 'update.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder'
-    ]
+    template_name = 'contexts/update.html'
+    fields = ['title']
 
 
 class ModelDeleteView(DeleteView):

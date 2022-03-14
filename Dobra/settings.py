@@ -69,7 +69,7 @@ LOGOUT_URL = '/logout/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Dobra/templates',],
+        'DIRS': [BASE_DIR /'Dobra/templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

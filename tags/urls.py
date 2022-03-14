@@ -24,11 +24,10 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', modellist, name='home'),
-    path('list/', modellist, name='list'),
-    path('new/', ModelCreateView.as_view(), name='new'),
-    path('<int:pk>/', ModelDetailView.as_view(), name='detail'),
-    path('<int:pk>/edit/', ModelUpdateView.as_view(), name='edit'),
-    path('<int:pk>/delete/', ModelDeleteView.as_view(), name='delete'),
+    path('list/', modellist, name='tag_list'),
+    path('new/', ModelCreateView.as_view(), name='tag_new'),
+    path('<int:pk>/', ModelDetailView.as_view(), name='tag_detail'),
+    path('<int:pk>/edit/', ModelUpdateView.as_view(), name='tag_edit'),
+    path('<int:pk>/delete/', ModelDeleteView.as_view(), name='tag_delete'),
 ]
     

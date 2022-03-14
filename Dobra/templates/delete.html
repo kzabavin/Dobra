@@ -5,7 +5,7 @@
 {% block main %}
 
     <form action="" method="post">{% csrf_token %}
-      <h2>Are you sure you want to delete {{object.title}}?</h2>
+      <h2>Are you sure you want to delete {{name}} {{object.title}}?</h2>
 
       <input type="submit" value="Confirm" />
     </form>

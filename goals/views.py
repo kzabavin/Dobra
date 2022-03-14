@@ -11,34 +11,24 @@ from .models import Goal as CRUDModel
 
 
 def modellist(request):
-    return render(request, 'list.html', {'objects': CRUDModel.objects.all() })
+    return render(request, 'goals/list.html', {'objects': CRUDModel.objects.all() , 'name': CRUDModel.__name__})
     
 
 class ModelCreateView(CreateView):
     model = CRUDModel
     template_name = 'create.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder'
-    ]
+    fields = ['title', 'note']
 
 
 class ModelDetailView(DetailView):
     model = CRUDModel
-    template_name = 'read.html'
+    template_name = 'goals/read.html'
 
 
 class ModelUpdateView(UpdateView):
     model = CRUDModel
-    template_name = 'update.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder'
-    ]
+    template_name = 'goals/update.html'
+    fields = ['title', 'note']
 
 
 class ModelDeleteView(DeleteView):

@@ -11,7 +11,7 @@
     <p>{{ object.note }}</p>
   </div>
 
-  <p><a href='{% url 'edit' object.pk %}'>Edit </a></p>
-  <p><a href='{% url 'delete' object.pk %}'>Delete </a></p>
+  <p><a href='{% url 'task_edit' object.pk %}'>Edit </a></p>
+  <p><a href='{% url 'task_delete' object.pk %}'>Delete </a></p>
 
 {% endblock %}

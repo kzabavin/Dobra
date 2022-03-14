@@ -21,13 +21,19 @@
             {% if request.user.is_authenticated %}
 
             <li class="nav-item">
-              <a class="nav-link" href="{% url "list" %}">Task list</a>
+              <a class="nav-link" href="{% url "task_list" %}">Tasks</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url "new" %}">New task</a>
+              <a class="nav-link" href="{% url "project_list" %}">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects/list">Project list</a>
+              <a class="nav-link" href="{% url "context_list" %}">Contexts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "tag_list" %}">Tags</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "goal_list" %}">Goals</a>
             </li>
 
             {% endif %}

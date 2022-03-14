@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block title %}View {{name}}{% endblock %}
+
+{% block main %}
+
+  <div class="task-entry">
+
+    <h2>{{ object.title }}</h2>
+  </div>
+
+  <p><a href='{% url 'context_edit' object.pk %}'>Edit </a></p>
+  <p><a href='{% url 'context_delete' object.pk %}'>Delete </a></p>
+
+{% endblock %}

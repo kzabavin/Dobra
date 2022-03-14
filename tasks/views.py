@@ -7,46 +7,30 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView, UpdateView, DeleteView
 
+from .forms import TaskForm
+
 from .models import Task as CRUDModel
 
 
 def modellist(request):
-    return render(request, 'list.html', {'objects': CRUDModel.objects.all() })
+    return render(request, 'tasks/list.html', {'objects': CRUDModel.objects.all() , 'name': CRUDModel.__name__})
     
 
 class ModelCreateView(CreateView):
     model = CRUDModel
     template_name = 'create.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder', 
-        'start_time', 
-        'deadline',
-        'priority',
-        'project'
-    ]
+    form_class = TaskForm
 
 
 class ModelDetailView(DetailView):
     model = CRUDModel
-    template_name = 'read.html'
+    template_name = 'tasks/read.html'
 
 
 class ModelUpdateView(UpdateView):
     model = CRUDModel
-    template_name = 'update.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder', 
-        'start_time', 
-        'deadline',
-        'priority',
-        'project'
-    ]
+    template_name = 'tasks/update.html'
+    form_class = TaskForm
 
 
 class ModelDeleteView(DeleteView):

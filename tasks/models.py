@@ -191,7 +191,7 @@ class Task(models.Model):
             self.start_time = start_time
 
     def get_absolute_url(self):
-        return reverse('detail', args=[str(self.id)])
+        return reverse('task_detail', args=[str(self.id)])
 
 
 class Reminder(models.Model):

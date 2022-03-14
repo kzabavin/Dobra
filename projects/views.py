@@ -7,36 +7,30 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic.edit import CreateView
 from django.views.generic import DetailView, UpdateView, DeleteView
 
+from .forms import ProjectForm
+
 from .models import Project as CRUDModel
 
 
 def modellist(request):
-    return render(request, 'list.html', {'objects': CRUDModel.objects.all() })
+    return render(request, 'projects/list.html', {'objects': CRUDModel.objects.all(), 'name': CRUDModel.__name__ })
     
 
 class ModelCreateView(CreateView):
     model = CRUDModel
     template_name = 'create.html'
-    fields = [
-        'title', 
-        'note', 
-    ]
+    form_class = ProjectForm
 
 
 class ModelDetailView(DetailView):
     model = CRUDModel
-    template_name = 'read.html'
+    template_name = 'projects/read.html'
 
 
 class ModelUpdateView(UpdateView):
     model = CRUDModel
-    template_name = 'update.html'
-    fields = [
-        'compleat', 
-        'title', 
-        'note', 
-        'folder'
-    ]
+    template_name = 'projects/update.html'
+    form_class = ProjectForm
 
 
 class ModelDeleteView(DeleteView):

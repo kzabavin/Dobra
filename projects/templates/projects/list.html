@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 
-{% block title %}List{% endblock %}
-
+{% block title %}{{name}}{% endblock %}
 {% block main %}
 
 <div  class="container">
+  <a class="nav-link" href="{% url "project_new" %}">+{{name}}</a>
     <div  class="row justify-content-left">
       <div  class="col-4">
           
@@ -12,7 +12,7 @@
 
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" {% if object.compleat %} checked {% endif %}>
-            <a href="{% url 'detail' object.pk %}"> {{object.title}} </a>
+            <a href="{% url 'project_detail' object.pk %}"> {{object.title}} </a>
          </div>
 
         {% endfor %}
