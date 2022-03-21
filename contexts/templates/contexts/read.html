@@ -9,7 +9,7 @@
     <h2>{{ object.title }}</h2>
   </div>
 
-  <p><a href='{% url 'context_edit' object.pk %}'>Edit </a></p>
-  <p><a href='{% url 'context_delete' object.pk %}'>Delete </a></p>
+  <p><a href='{% url 'context_edit' object.pk %}'>{% trans "Edit" %} </a></p>
+  <p><a href='{% url 'context_delete' object.pk %}'>{% trans "Delete" %} </a></p>
 
 {% endblock %}

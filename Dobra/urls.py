@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tasks.views import modellist
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
 
     path('tags/', include('tags.urls')),
     path('contexts/', include('contexts.urls')),
@@ -27,4 +28,4 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
     path('', modellist),
-]
+)

@@ -120,40 +120,60 @@ class Repeat(models.Model):
 
 class Task(models.Model):
 
-    title = models.CharField(max_length=255, blank=False)
-    note = models.TextField(max_length=2049, blank=True)
+    title = models.CharField(
+        verbose_name=_('title'),
+        max_length=255, blank=False)
+
+    note = models.TextField(
+        verbose_name=_('note'),
+        max_length=2049, blank=True)
 
     folder = models.CharField(
-        choices=FOLDERS.choices, default=FOLDERS.INBOX, 
-        blank=True, null=True, 
+        verbose_name=_('folder'),
+        choices=FOLDERS.choices,
+        default=FOLDERS.INBOX,
+        blank=True, null=True,
         max_length=2)
-        
+
     """ if start_time is set then folder is null """
-        
+
     start_time = models.DateTimeField(
+        verbose_name=_('start'),
         blank=True, null=True)
-        
+
     """ if folder is set then start_time is null """
 
-    deadline = models.DateTimeField(blank=True, null=True)
+    deadline = models.DateTimeField(
+        verbose_name=_('deadline'),
+        blank=True, null=True)
 
     priority = models.IntegerField(
-        choices=PRIORITY.choices, default=PRIORITY.MEDIUM, blank=False)
+        verbose_name=_('priority'),
+        choices=PRIORITY.choices,
+        default=PRIORITY.MEDIUM,
+        blank=False)
 
     project = models.ForeignKey(
-        Project, on_delete=models.SET_NULL, blank=True, null=True)
+        Project, on_delete=models.SET_NULL,
+        blank=True, null=True)
     context = models.ForeignKey(
-        Context, on_delete=models.SET_NULL, blank=True, null=True)
+        Context, on_delete=models.SET_NULL,
+        blank=True, null=True)
     tags = models.ManyToManyField(
-        Tag, blank=True)
+        Tag,
+        blank=True)
     assign = models.ForeignKey(
-        Contact, on_delete=models.SET_NULL, blank=True, null=True)
+        Contact, on_delete=models.SET_NULL,
+        blank=True, null=True)
     goal = models.ForeignKey(
-        Goal, on_delete=models.SET_NULL, blank=True, null=True)
+        Goal, on_delete=models.SET_NULL,
+        blank=True, null=True)
     repeate = models.ForeignKey(
-        Repeat, on_delete=models.SET_NULL, blank=True, null=True)
+        Repeat, on_delete=models.SET_NULL,
+        blank=True, null=True)
 
-    compleat = models.BooleanField(default=False)
+    compleat = models.BooleanField(
+        verbose_name=_('compleat'), default=False)
     trashed = models.BooleanField(default=False)
 
     class Meta:
@@ -162,15 +182,15 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def get_folder(self) -> FOLDERS:
-        
+
         if self.start_time is None:
             return self.folder
 
         start_date = self.start_time.date()
-        
-        if start_date <= date.today() :
+
+        if start_date <= date.today():
             return FOLDERS.TODAY
 
         elif start_date == date.today() + timedelta(days=1):
@@ -183,7 +203,7 @@ class Task(models.Model):
         assert not folder is None or not start_time is None
         if folder in [
             FOLDERS.INBOX, FOLDERS.NEXT, FOLDERS.SOMEDAY, FOLDERS.WAITING
-            ]:
+        ]:
             self.folder = folder
             self.start_time = None
         else:
