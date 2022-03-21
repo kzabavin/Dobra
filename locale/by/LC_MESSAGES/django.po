@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-21 15:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\Dobra\consts.py:6
+msgid "inbox"
+msgstr "скрыня"
+
+#: .\Dobra\consts.py:7
+msgid "today"
+msgstr "сёння"
+
+#: .\Dobra\consts.py:8
+msgid "next"
+msgstr "наступныя"
+
+#: .\Dobra\consts.py:9
+msgid "tomorrow"
+msgstr "заўтра"
+
+#: .\Dobra\consts.py:10
+msgid "scheduled"
+msgstr "запланавана"
+
+#: .\Dobra\consts.py:11
+msgid "someday"
+msgstr "калі-небудзь"
+
+#: .\Dobra\consts.py:12
+msgid "waiting for"
+msgstr "чакаць"
+
+#: .\Dobra\consts.py:25
+msgid "Low"
+msgstr "Нізкі"
+
+#: .\Dobra\consts.py:26
+msgid "Medium"
+msgstr "Звычайты"
+
+#: .\Dobra\consts.py:27
+msgid "High"
+msgstr "Высокі"
+
+#: .\Dobra\settings.py:129
+msgid "Belarus"
+msgstr "Беларуская"
+
+#: .\Dobra\settings.py:130
+msgid "English"
+msgstr "Ангельская"
+
+#: .\Dobra\templates\index.html:37 .\tasks\models.py:161
+msgid "Tasks"
+msgstr "Задачы"
+
+#: .\Dobra\templates\index.html:40
+msgid "Projects"
+msgstr "Праэкты"
+
+#: .\Dobra\templates\index.html:43
+msgid "Contexts"
+msgstr "Кантэксты"
+
+#: .\Dobra\templates\index.html:46
+msgid "Tags"
+msgstr "Тэгі"
+
+#: .\Dobra\templates\index.html:49
+msgid "Goals"
+msgstr "Мэты"
+
+#: .\Dobra\templates\index.html:63
+msgid "Hello"
+msgstr "Прывітанне"
+
+#: .\Dobra\templates\index.html:64
+msgid "Logout"
+msgstr "Выйсці"
+
+#: .\Dobra\templates\index.html:68
+msgid "Log-in"
+msgstr "Увайсці"
+
+#: .\tasks\models.py:33
+msgid "Phone"
+msgstr "Тэлефон"
+
+#: .\tasks\models.py:57
+msgid "daily"
+msgstr "штодзень"
+
+#: .\tasks\models.py:58
+msgid "weekly"
+msgstr "штотыдзень"
+
+#: .\tasks\models.py:59
+msgid "weekday"
+msgstr "па будях"
+
+#: .\tasks\models.py:60
+msgid "monthly"
+msgstr "штомесяц"
+
+#: .\tasks\models.py:61
+msgid "yearly"
+msgstr "штогадовая"
+
+#: .\tasks\models.py:73
+msgid "monday"
+msgstr "панядзелак"
+
+#: .\tasks\models.py:74
+msgid "tuesday"
+msgstr "аўторак"
+
+#: .\tasks\models.py:75
+msgid "wednesday"
+msgstr "серада"
+
+#: .\tasks\models.py:76
+msgid "thursday"
+msgstr "чацвер"
+
+#: .\tasks\models.py:77
+msgid "friday"
+msgstr "пятніца"
+
+#: .\tasks\models.py:78
+msgid "saturday"
+msgstr "субота"
+
+#: .\tasks\models.py:79
+msgid "sunday"
+msgstr "нядзеля"
+
+#: .\tasks\models.py:106
+msgid "first"
+msgstr "першы"
+
+#: .\tasks\models.py:106
+msgid "second"
+msgstr "другі"
+
+#: .\tasks\models.py:106
+msgid "third"
+msgstr "трэці"
+
+#: .\tasks\models.py:107
+msgid "fourth"
+msgstr "чацвёрты"
+
+#: .\tasks\models.py:107
+msgid "last"
+msgstr "апошні"
+
+#: .\tasks\models.py:160
+msgid "Task"
+msgstr "Задача"
+
+#: .\tasks\models.py:203
+msgid "Popup"
+msgstr "Паведамленне"
+
+#: .\tasks\models.py:203
+msgid "E-mail"
+msgstr "Электронная пошта"
+
+#: .\tasks\models.py:212
+msgid "minutes"
+msgstr "хвіліны"
+
+#: .\tasks\models.py:212
+msgid "hours"
+msgstr "гадзіны"
+
+#: .\tasks\models.py:212
+msgid "days"
+msgstr "дні"
+
+#: .\tasks\models.py:213
+msgid "on date"
+msgstr "у дату"

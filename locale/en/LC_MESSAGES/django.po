@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-21 15:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Dobra\consts.py:6
+msgid "inbox"
+msgstr ""
+
+#: .\Dobra\consts.py:7
+msgid "today"
+msgstr ""
+
+#: .\Dobra\consts.py:8
+msgid "next"
+msgstr ""
+
+#: .\Dobra\consts.py:9
+msgid "tomorrow"
+msgstr ""
+
+#: .\Dobra\consts.py:10
+msgid "scheduled"
+msgstr ""
+
+#: .\Dobra\consts.py:11
+msgid "someday"
+msgstr ""
+
+#: .\Dobra\consts.py:12
+msgid "waiting for"
+msgstr ""
+
+#: .\Dobra\consts.py:25
+msgid "Low"
+msgstr ""
+
+#: .\Dobra\consts.py:26
+msgid "Medium"
+msgstr ""
+
+#: .\Dobra\consts.py:27
+msgid "High"
+msgstr ""
+
+#: .\Dobra\settings.py:129
+msgid "Belarus"
+msgstr ""
+
+#: .\Dobra\settings.py:130
+msgid "English"
+msgstr ""
+
+#: .\Dobra\templates\index.html:37 .\tasks\models.py:161
+msgid "Tasks"
+msgstr ""
+
+#: .\Dobra\templates\index.html:40
+msgid "Projects"
+msgstr ""
+
+#: .\Dobra\templates\index.html:43
+msgid "Contexts"
+msgstr ""
+
+#: .\Dobra\templates\index.html:46
+msgid "Tags"
+msgstr ""
+
+#: .\Dobra\templates\index.html:49
+msgid "Goals"
+msgstr ""
+
+#: .\Dobra\templates\index.html:63
+msgid "Hello"
+msgstr ""
+
+#: .\Dobra\templates\index.html:64
+msgid "Logout"
+msgstr ""
+
+#: .\Dobra\templates\index.html:68
+msgid "Log-in"
+msgstr ""
+
+#: .\tasks\models.py:33
+msgid "Phone"
+msgstr ""
+
+#: .\tasks\models.py:57
+msgid "daily"
+msgstr ""
+
+#: .\tasks\models.py:58
+msgid "weekly"
+msgstr ""
+
+#: .\tasks\models.py:59
+msgid "weekday"
+msgstr ""
+
+#: .\tasks\models.py:60
+msgid "monthly"
+msgstr ""
+
+#: .\tasks\models.py:61
+msgid "yearly"
+msgstr ""
+
+#: .\tasks\models.py:73
+msgid "monday"
+msgstr ""
+
+#: .\tasks\models.py:74
+msgid "tuesday"
+msgstr ""
+
+#: .\tasks\models.py:75
+msgid "wednesday"
+msgstr ""
+
+#: .\tasks\models.py:76
+msgid "thursday"
+msgstr ""
+
+#: .\tasks\models.py:77
+msgid "friday"
+msgstr ""
+
+#: .\tasks\models.py:78
+msgid "saturday"
+msgstr ""
+
+#: .\tasks\models.py:79
+msgid "sunday"
+msgstr ""
+
+#: .\tasks\models.py:106
+msgid "first"
+msgstr ""
+
+#: .\tasks\models.py:106
+msgid "second"
+msgstr ""
+
+#: .\tasks\models.py:106
+msgid "third"
+msgstr ""
+
+#: .\tasks\models.py:107
+msgid "fourth"
+msgstr ""
+
+#: .\tasks\models.py:107
+msgid "last"
+msgstr ""
+
+#: .\tasks\models.py:160
+msgid "Task"
+msgstr ""
+
+#: .\tasks\models.py:203
+msgid "Popup"
+msgstr ""
+
+#: .\tasks\models.py:203
+msgid "E-mail"
+msgstr ""
+
+#: .\tasks\models.py:212
+msgid "minutes"
+msgstr ""
+
+#: .\tasks\models.py:212
+msgid "hours"
+msgstr ""
+
+#: .\tasks\models.py:212
+msgid "days"
+msgstr ""
+
+#: .\tasks\models.py:213
+msgid "on date"
+msgstr ""
