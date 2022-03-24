@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
 "POT-Creation-Date: 2022-03-21 16:22+0300\n"
-=======
-"POT-Creation-Date: 2022-03-21 15:48+0300\n"
->>>>>>> b9a815ab35daacbea73d2dfe719362e09179deba
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,11 +65,7 @@ msgstr "Беларуская"
 msgid "English"
 msgstr "Ангельская"
 
-<<<<<<< HEAD
 #: .\Dobra\templates\index.html:37 .\tasks\models.py:181
-=======
-#: .\Dobra\templates\index.html:37 .\tasks\models.py:161
->>>>>>> b9a815ab35daacbea73d2dfe719362e09179deba
 msgid "Tasks"
 msgstr "Задачы"
 
@@ -105,7 +97,6 @@ msgstr "Выйсці"
 msgid "Log-in"
 msgstr "Увайсці"
 
-<<<<<<< HEAD
 #: .\contexts\templates\contexts\read.html:12
 msgid "Edit"
 msgstr "Змяніць"
@@ -114,8 +105,6 @@ msgstr "Змяніць"
 msgid "Delete"
 msgstr "Выдаліць"
 
-=======
->>>>>>> b9a815ab35daacbea73d2dfe719362e09179deba
 #: .\tasks\models.py:33
 msgid "Phone"
 msgstr "Тэлефон"
@@ -188,7 +177,6 @@ msgstr "чацвёрты"
 msgid "last"
 msgstr "апошні"
 
-<<<<<<< HEAD
 #: .\tasks\models.py:124
 msgid "title"
 msgstr "назва"
@@ -242,32 +230,5 @@ msgid "days"
 msgstr "дні"
 
 #: .\tasks\models.py:233
-=======
-#: .\tasks\models.py:160
-msgid "Task"
-msgstr "Задача"
-
-#: .\tasks\models.py:203
-msgid "Popup"
-msgstr "Паведамленне"
-
-#: .\tasks\models.py:203
-msgid "E-mail"
-msgstr "Электронная пошта"
-
-#: .\tasks\models.py:212
-msgid "minutes"
-msgstr "хвіліны"
-
-#: .\tasks\models.py:212
-msgid "hours"
-msgstr "гадзіны"
-
-#: .\tasks\models.py:212
-msgid "days"
-msgstr "дні"
-
-#: .\tasks\models.py:213
->>>>>>> b9a815ab35daacbea73d2dfe719362e09179deba
 msgid "on date"
 msgstr "у дату"

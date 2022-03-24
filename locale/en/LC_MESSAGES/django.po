@@ -102,7 +102,6 @@ msgstr ""
 msgid "Log-in"
 msgstr ""
 
-<<<<<<< HEAD
 #: .\contexts\templates\contexts\read.html:12
 msgid "Edit"
 msgstr ""
@@ -111,8 +110,6 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-=======
->>>>>>> b9a815ab35daacbea73d2dfe719362e09179deba
 #: .\tasks\models.py:33
 msgid "Phone"
 msgstr ""
